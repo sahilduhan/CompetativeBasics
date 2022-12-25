@@ -42,7 +42,5 @@ double eps = 1e-12;
 
 int main(){
 
-
-
     return 0;
 }
