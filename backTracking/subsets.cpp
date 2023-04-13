@@ -1,17 +1,25 @@
 #include<bits/stdc++.h>
 using namespace std;
-void subSets(string s, string temp, int i, int j){
+vector<string>a;
+void permutation(string s, int i, int j, string temp){
     if (i == s.size()){
-        cout << temp << endl;
+        if (temp.size() > 0) a.push_back(temp);
         return;
     }
-    subSets(s, temp, i + 1, j + 1);
+    permutation(s, i + 1, j + 1, temp);
     temp.push_back(s[i]);
-    subSets(s, temp, i + 1, j);
+    permutation(s, i + 1, j, temp);
 }
 int main(){
-    string s = "abc";
-    subSets(s, "", 0, 1);
+    string s = "code";
+    permutation(s, 0, 0, "");
+    // for (auto it : a) cout << it << endl;
 
+    long long ans = 0;
+    permutation(s, 0, 0, "");
+    for (auto it : a){
+        ans += it.size();
+    }
+    cout << ans << endl;
     return 0;
 }

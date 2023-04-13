@@ -10,6 +10,9 @@
         "ostream": "cpp",
         "iostream": "cpp",
         "sstream": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "tuple": "cpp",
+        "new": "cpp",
+        "array": "cpp"
     }
 }
