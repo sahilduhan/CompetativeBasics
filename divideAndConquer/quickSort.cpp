@@ -1,28 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
-int partition(vector<int>& arr, int s, int e){
-    int pivot = arr[e];
-    int i = s - 1;
-    for (int idx = s;idx < e;idx++){
+
+int partition(int arr [], int low, int high){
+    int pivot = arr[high], i = low - 1;
+    for (int idx = low; idx <= high - 1;idx++){
         if (arr[idx] <= pivot){
             i++;
             swap(arr[i], arr[idx]);
         }
     }
-    swap(arr[i + 1], arr[e]);
+    swap(arr[i + 1], arr[high]);
     return i + 1;
 }
 
-void quickSort(vector<int>& arr, int s, int e){
-    if (s >= e) return;
-    int p = partition(arr, s, e);
-    quickSort(arr, s, p - 1);
-    quickSort(arr, p + 1, e);
+void quickSort(int arr [], int low, int high){
+    if (low > high) return;
+    int p = partition(arr, low, high);
+    quickSort(arr, low, p - 1);
+    quickSort(arr, p + 1, high);
+
 }
 
 int main(){
 
-
-
     return 0;
 }
+
+
